@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+        <h1>Calculadora Financeira</h1>
+            Quantidade de clientes diários:<br>
+            <input id="input_qtd_clientes_diarios" type="number"><br><br>
+            Receita por Vaga (R$):<br>
+            <input id="input_receita_por_vaga" type="number"><br><br>
+            Quantidade de dias em serviço:<br>
+            <input id="input_qtd_dias_mes" type="number"><br><br>
+            Impacto percentual do serviço (%):<br>
+            <input id="input_impacto_percentual" type="number"><br><br>
+            <button onclick="calcularSemSensor()">Calcular sem nosso serviço</button>
+            <button onclick="calcularComSensor()">Calcular com nosso serviço</button>
+        <div id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    function calcularSemSensor() {
+        // Obtendo valores dos inputs
+        const qtd_clientes_diarios = Number(input_qtd_clientes_diarios.value)
+        const receita_por_vaga = Number(input_receita_por_vaga.value)
+        const qtd_dias_mes = Number(input_qtd_dias_mes.value)
+        
+        // Calculando valores
+        var receita_oficina = receita_por_vaga * qtd_clientes_diarios * qtd_dias_mes
+        
+        // Exibindo resultados
+        resultado.innerHTML = `Seu faturamento sem o nosso serviço é de:R$${receita_oficina}`
+        }
+
+    function calcularComSensor(){
+        const qtd_clientes = Number(input_qtd_clientes.value)
+        const receita_por_vaga = Number(input_receita_por_vaga.value)
+        const qtd_total_vagas = Number(input_qtd_total_vagas.value)
+        const impacto_percentual = Number(input_impacto_percentual.value)
+        
+        
+        // Calculando valores
+        var receita_oficina = receita_por_vaga * qtd_total_vagas * qtd_clientes
+        
+        // Exibindo resultados
+        resultado.innerHTML = `Seu lucro é de:${receita_oficina}`
+    }
+</script>
