@@ -27,13 +27,10 @@
         var receita_oficina_sem_serviço = receita_por_vaga * qtd_clientes_diarios * qtd_dias_mes
         
         var receita_oficina_com_serviço = (receita_por_vaga * qtd_dias_mes * qtd_clientes_diarios) + (receita_oficina_sem_serviço * 0.20)
-
-        var diferença_receita = receita_oficina_com_serviço - receita_oficina_sem_serviço
         
         resultado.innerHTML =  `Sem o nosso serviço, sua receita mensal estimada será de R$ ${receita_oficina_sem_serviço}.<br>
             Com nosso sistema, sua receita pode aumentar para R$ ${receita_oficina_com_serviço} por mês.<br><br>
             Ao adotar nosso sistema, estariam adquirindo:<br>
-            Aumento de até R$ ${diferença_receita} por mês.<br>
             O calculo apresentado é apenas uma estimativa, sem garantias de resultados exatos.<br>
             Nosso compromisso é fornecer dashboards e relatórios diários, oferecendo aos gestores uma visão clara e atualizada para que possam ajustar seus processos e aprimorar a gestão de forma contínua.
             `
